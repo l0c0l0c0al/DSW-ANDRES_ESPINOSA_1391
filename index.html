@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="quiz.css">
+</head>
+<body>
+    <div class="quiz-container">
+    <h1>Questionario</h1>
+	<form id="quiz-form">
+		<p>1. ¿Qué es CSS?</p>
+		<label><input type="radio" name="q1" value="a">a) Permite el desarrollo en C++.</label><br>
+		<label><input type="radio" name="q1" value="b">b) CSS describe el estilo de una página web HTML. Es un lenguaje mediante el cual podemos establecer el comportamiento de una página web HTML. Describe cómo se mostrará el contenido HTML en la pantalla.</label><br>
+		<label><input type="radio" name="q1" value="c">c) Componente que pemrite el desarrollo en interfas gráfica en android.</label><br>
+
+		<p>2.  Nombre todos los módulos que se utilizan en la versión actual de CSS</p>
+		<label><input type="radio" name="q2" value="a">a)  Selectores, Modelo de caja, Fondos y Fronteras,  Efectos de texto, Transformaciones 2D / 3D Animaciones, Diseño de múltiples columnas,
+            Interfaz de usuario.</label><br>
+		<label><input type="radio" name="q2" value="b">b) Interfaz gráfica, sonido, archivos, videos</label><br>
+		<label><input type="radio" name="q2" value="c">c) Cuadro de herramientas, lista de tareas, notificaciones, terminal </label><br>
+
+		<p>3.  ¿Qué son los contadores CSS?</p>
+		<label><input type="radio" name="q3" value="a">a)  Desarrolla la interfáz gráfica de un aplicativo.</label><br>
+		<label><input type="radio" name="q3" value="b">b)  Son variables que se pueden incrementar mediante reglas de CSS que hacen un seguimiento del inspector de cuántas veces se ha utilizado la variable.</label><br>
+		<label><input type="radio" name="q3" value="c">c) Un lenguaje de programación diseñado en 1979 por Bjarne Stroustrup. La intención de su creación fue extender al lenguaje de programación C y añadir mecanismos que permiten la manipulación de objetos.</label><br>
+
+		<p>4. ¿Cómo hacemos una esquina redondeada usando CSS?</p>
+		<label><input type="radio" name="q4" value="a">a) Podemos hacer una esquina redondeada usando la propiedad “border-radius”. Podemos aplicar esta propiedad a cualquier elemento.</label><br>
+		<label><input type="radio" name="q4" value="b">b) Podemos ajustar el fondo de una plantilla</label><br>
+		<label><input type="radio" name="q4" value="c">c) Podemos cambiar la fuente de un texto.</label><br>
+
+		<p>5. ¿Cuál es el uso del modelo de caja en CSS?</p>
+		<label><input type="radio" name="q5" value="a">a) El modelo de caja es una caja que une todos los elementos HTML e incluye características como márgenes, borde, relleno y el contenido real.</label><br>
+		<label><input type="radio" name="q5" value="b">b) Muestra el texto que se desea ingresar en una pagina web.</label><br>
+		<label><input type="radio" name="q5" value="c">c) Barack Obama</label><br>
+<br>
+		<button type="submit">Enviar</button>
+	</form>
+
+	<div id="results"></div>
+
+	<script>
+		const quizForm = document.getElementById("quiz-form");
+		const resultsDiv = document.getElementById("results");
+
+		quizForm.addEventListener("submit", (event) => {
+			event.preventDefault();
+
+			let score = 0;
+			const answers = ["b", "a", "b", "a", "a"];
+
+			for (let i = 1; i <= 5; i++) {
+				const selectedAnswer = document.querySelector(`input[name=q${i}]:checked`);
+				if (selectedAnswer && selectedAnswer.value === answers[i - 1]) {
+					score++;
+				}
+			}
+
+			const resultText = `APROBASTE  ${score} DE 5 PREGUNTAS CORRECTAS`;
+			resultsDiv.innerText = resultText;
+		});
+	</script>
+</body>
+</html>

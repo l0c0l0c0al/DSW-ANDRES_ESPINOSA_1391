@@ -1,0 +1,21 @@
+.quiz-container {
+	max-width: 600px;
+	margin: 0 auto;
+	padding: 20px;
+	background-color: blanchedalmond;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+	text-align: center;
+}
+
+.question-container {
+	margin-bottom: 20px;
+}
+
+h3 {
+	margin-top: 0;
+}  
